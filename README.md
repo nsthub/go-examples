@@ -1,14 +1,5 @@
-# Hello Application example
+# NST Hub GoLang examples
 
-This example shows how to build and deploy a containerized Go web server
-application using [Kubernetes](https://kubernetes.io).
+This repository contains some basic GoLang examples from [NST Hub](http://www.github.com/nsthub), formerly known as [New Software Technlogies Ltd](http://www.nsthub.com):
 
-Visit https://cloud.google.com/container-engine/docs/tutorials/hello-app
-to follow the tutorial and deploy this application on [Google Container
-Engine](https://cloud.google.com/container-engine).
-
-This directory contains:
-
-- `main.go` contains the HTTP server implementation. It responds to all HTTP
-  requests with a  "Hello, world!" response.
-- `Dockerfile` is used to build the Docker image for the application.
+- [Google Container Engine (GCE) basic web service](gce/README.md)

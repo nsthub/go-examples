@@ -1,18 +1,18 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: helloweb
+  name: gce-example
   labels:
-    app: hello
+    app: gce-example
 spec:
   template:
     metadata:
       labels:
-        app: hello
+        app: gce-example
         tier: web
     spec:
       containers:
-      - name: hello-app
-        image: gcr.io/google-samples/hello-app:1.0
+      - name: gce-example
+        image: gcr.io/nst-gobasic-service/gce-example:1.0
         ports:
         - containerPort: 8080
