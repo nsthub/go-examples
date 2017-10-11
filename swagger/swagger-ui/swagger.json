@@ -1,0 +1,135 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "description": "This is an example of a GoLang based service with Swagger UI included.",
+    "title": "Sample service with Swagger included.",
+    "contact": {
+      "name": "NST Hub NST Info",
+      "email": "info@nsthub.com"
+    },
+    "version": "v1"
+  },
+  "host": "localhost:8080",
+  "basePath": "/",
+  "paths": {
+    "/users/{id}": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "schemes": [
+          "http"
+        ],
+        "summary": "Returns the user by the given id.",
+        "operationId": "userById",
+        "parameters": [
+          {
+            "type": "string",
+            "description": "id user id",
+            "name": "Id",
+            "in": "path",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          },
+          "404": {
+            "$ref": "#/responses/notFound"
+          },
+          "500": {
+            "$ref": "#/responses/internalError"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BadRequest": {
+      "description": "bad request error",
+      "type": "object",
+      "x-go-package": "go-examples/swagger/routes"
+    },
+    "Created": {
+      "description": "created http status code",
+      "type": "object",
+      "x-go-package": "go-examples/swagger/routes"
+    },
+    "InternalError": {
+      "description": "internal error",
+      "type": "object",
+      "x-go-package": "go-examples/swagger/routes"
+    },
+    "NoContent": {
+      "description": "no content http status code",
+      "type": "object",
+      "x-go-package": "go-examples/swagger/routes"
+    },
+    "NotFound": {
+      "description": "not found error",
+      "type": "object",
+      "x-go-package": "go-examples/swagger/routes"
+    },
+    "User": {
+      "description": "User",
+      "type": "object",
+      "properties": {
+        "firstName": {
+          "type": "string",
+          "x-go-name": "FirstName"
+        },
+        "surname": {
+          "type": "string",
+          "x-go-name": "Surname"
+        }
+      },
+      "x-go-package": "go-examples/swagger/routes"
+    },
+    "UserByIdParam": {
+      "type": "object",
+      "required": [
+        "Id"
+      ],
+      "properties": {
+        "Id": {
+          "description": "id user id",
+          "type": "string"
+        }
+      },
+      "x-go-package": "go-examples/swagger/routes"
+    }
+  },
+  "responses": {
+    "badRequest": {
+      "description": "bad request error"
+    },
+    "created": {
+      "description": "created http status code"
+    },
+    "internalError": {
+      "description": "internal error"
+    },
+    "noContent": {
+      "description": "no content http status code"
+    },
+    "notFound": {
+      "description": "not found error"
+    }
+  }
+}
